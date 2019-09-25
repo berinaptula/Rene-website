@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6; }
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] minmax(min-content, 90rem) [center-end] 1fr [full-end];
+  grid-template-rows: 10rem calc(100vh - 10rem) repeat(2, 1fr); }
+
+.main {
+  grid-row: 3/4;
+  grid-column: center-start / center-end; }
+
+.navigation {
+  background-color: yellowgreen;
+  grid-row: 1/2;
+  grid-column: full-start / full-end; }
+
+.header {
+  background-color: grey;
+  grid-row: 2/3;
+  grid-column: center-start / center-end; }
+
+.portfolio {
+  background-color: aquamarine; }
+
+.about-me {
+  background-color: bisque;
+  grid-row: 4/5;
+  grid-column: center-start / center-end; }
+
+.contact {
+  background-color: orange; }
+
+.footer {
+  background-color: rosybrown;
+  grid-row: 4/5;
+  grid-column: full-start / full-end; }

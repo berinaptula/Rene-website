@@ -4,4 +4,28 @@ $color-primary : #f0fff4;
 
 *,
 *::before,
-*::after {}
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: [full-start] 1fr [center-start] minmax(min-content, 90rem) [center-end] 1fr [full-end];
+    grid-template-rows: 10rem calc(100vh - 10rem) repeat(2, 1fr);
+}
+
+.main {
+    grid-row: 3/4;
+    grid-column: center-start / center-end;
+}
