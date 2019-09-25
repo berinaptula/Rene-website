@@ -30,8 +30,16 @@ body {
   font-size: 3.5rem;
   font-weight: 300; }
 
+.heading-3 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.3rem; }
+
 .paragraph {
-  font-size: 1.7rem; }
+  font-size: 1.4rem; }
+
+.margin-bottom-sm {
+  margin-bottom: 3rem; }
 
 .top-bar {
   grid-row: 1/2;
@@ -194,9 +202,28 @@ body {
     width: 100%; }
 
 .about-me {
-  background-color: bisque;
+  margin-top: 5rem;
   grid-row: 4/5;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  grid-auto-rows: min-content;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center; }
+  .about-me__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; }
+    .about-me__text p {
+      width: 80%; }
+  .about-me__photo {
+    width: 60%; }
+  .about-me__image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%; }
 
 .contact {
   background-color: orange; }
