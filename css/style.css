@@ -44,7 +44,32 @@ body {
   color: black;
   text-decoration: none;
   font-size: 1.4rem;
-  font-weight: 300; }
+  font-weight: 300;
+  display: block;
+  transition: all 0.2s;
+  position: relative; }
+  .navigation__link:link::after, .navigation__link:visited::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 0.08rem;
+    background-color: currentColor;
+    margin: 0 auto;
+    transition: all 0.2s;
+    opacity: 0;
+    visibility: hidden; }
+  .navigation__link:link:hover, .navigation__link:visited:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2); }
+  .navigation__link:link:hover::after, .navigation__link:visited:hover::after {
+    width: 100%;
+    opacity: 1;
+    visibility: visible; }
+  .navigation__link:link:active, .navigation__link:visited:active {
+    transform: translateY(2px) scale(1.2); }
 
 .social-media {
   display: grid;
@@ -53,9 +78,13 @@ body {
   justify-items: center;
   align-items: center; }
   .social-media__logo {
-    width: 4.5rem; }
+    width: 4.5rem;
+    display: block;
+    transition: all 0.2s; }
     .social-media__logo--2 {
       width: 6rem; }
+    .social-media__logo:hover {
+      transform: rotateZ(-5deg) scale(1.1); }
 
 .header {
   background-color: grey;

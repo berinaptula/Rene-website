@@ -30,6 +30,40 @@
         text-decoration: none;
         font-size: 1.4rem;
         font-weight: 300;
+        display: block;
+        transition: all 0.2s;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 50%;
+            height: 0.08rem;
+            background-color: currentColor;
+            margin: 0 auto;
+            transition: all 0.2s;
+            opacity: 0;
+            visibility: hidden;
+
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            box-shadow: 0 2rem 3rem rgba(#000, 0.2);
+        }
+
+        &:hover::after {
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:active {
+            transform: translateY(2px) scale(1.2);
+        }
     }
 }
 
@@ -42,6 +76,8 @@
 
     &__logo {
         width: 4.5rem;
+        display: block;
+        transition: all 0.2s;
 
         &--1 {}
 
@@ -50,5 +86,9 @@
         }
 
         &--3 {}
+
+        &:hover {
+            transform: rotateZ(-5deg) scale(1.1);
+        }
     }
 }
