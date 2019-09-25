@@ -1,4 +1,16 @@
 .contact {
-    background-color: orange;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
 
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+        font-size: 1.6rem;
+    }
 }
