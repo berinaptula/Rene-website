@@ -13,4 +13,13 @@
     &__item {
         font-size: 1.6rem;
     }
+
+    @media only screen and (max-width:$bp-large) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width:$bp-medium) {
+        width: 100%;
+        padding: 0;
+    }
 }

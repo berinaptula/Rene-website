@@ -8,6 +8,14 @@
     grid-template-columns: 50% 50%;
     justify-items: center;
     margin-bottom: 5rem;
+    justify-content: center;
+
+
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+        grid-template-columns: 100%;
+        grid-row-gap: 3rem;
+    }
 
     &__text {
         display: flex;
@@ -24,6 +32,13 @@
 
     &__photo {
         width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width:$bp-medium) {
+            width: 30vh;
+        }
 
     }
 
@@ -31,5 +46,6 @@
         width: 100%;
         object-fit: cover;
         border-radius: 50%;
+
     }
 }

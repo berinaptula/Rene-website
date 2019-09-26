@@ -4,6 +4,13 @@ $color-primary : #f0fff4;
 
 $color-rectangle :#d13f34;
 
+
+// Breakpoints
+
+$bp-large : 78.12em; // 1250px
+$bp-medium : 56.25em; // 900px
+$bp-small : 37.5em; // 600px
+
 *,
 *::before,
 *::after {
@@ -24,11 +31,19 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: [full-start] 1fr [center-start] minmax(min-content, 90rem) [center-end] 1fr [full-end];
-    grid-template-rows: 15rem calc(100vh - 15rem) max-content min-content;
+    grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] minmax(40rem, 80rem) [center-end] minmax(5rem, 1fr)[full-end];
+    grid-template-rows: 15rem minmax(calc(100vh - 15rem), 100rem);
+
+    @media only screen and (max-width:$bp-small) {
+        grid-template-rows: 15rem minmax(calc(100vh - 0px), min-content);
+    }
 }
 
 .main {
     grid-row: 3/4;
     grid-column: center-start / center-end;
+
+    @media only screen and (max-width:$bp-small) {
+        grid-column: full-start / full-end;
+    }
 }

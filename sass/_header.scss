@@ -1,12 +1,18 @@
 .header {
     grid-row: 2/3;
     grid-column: center-start / center-end;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content max-content;
+    grid-row-gap: 10rem;
     padding: 3rem;
     position: relative;
+
+    @media only screen and (max-width:$bp-small) {
+        grid-column: full-start / full-end;
+        grid-template-rows: max-content 50vh;
+    }
+
 
     &__rectangle {
         width: 2rem;
@@ -28,6 +34,10 @@
         p {
             mix-blend-mode: initial;
         }
+
+        @media only screen and (max-width:$bp-medium) {
+            grid-column: 1/ -1;
+        }
     }
 
     &__triangle {
@@ -44,10 +54,10 @@
     }
 
     &__video {
+        width: 100%;
         grid-row: 2/3;
         grid-column: 1/ -1;
-        width: 100%;
-        align-self: center;
+
     }
 
     &__paragraph {
